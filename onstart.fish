@@ -10,6 +10,9 @@ apt-get update -y
 and apt-get install -y git build-essential cmake curl wget nvidia-cuda-toolkit
 
 # 2. Clonar e compilar llama.cpp com suporte a CUDA
+if not test -f /workspace
+    mkdir /workspace
+end
 cd /workspace
 if not test -d "llama.cpp"
     git clone https://github.com/ggml-org/llama.cpp.git
